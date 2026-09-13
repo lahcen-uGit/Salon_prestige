@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ===== NAVBAR ===== */
+.pub-navbar {
+  background: var(--ink);
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.pub-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.pub-brand span {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.pub-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.pub-nav-link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.pub-nav-link:hover { color: var(--white); }
+
+.pub-nav-link.active { color: var(--gold); font-weight: 700; }
+
+/* ===== HERO ===== */
+.pub-hero {
+  background: var(--ink);
+  padding: 80px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 480px;
+}
+
+.hero-title {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-title span { color: var(--gold); }
+
+.hero-lede {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===== HERO STATS ===== */
+.hero-stats {
+  background: rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  gap: 0;
+}
+
+.hero-stat {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-stat:last-child { border-right: none; }
+
+.hero-stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.hero-stat-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ===== SECTIONS ===== */
+.pub-section {
+  padding: 60px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.pub-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.pub-section-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+
+/* ===== CATALOGUE CARDS ===== */
+.pub-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pub-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.15s;
+}
+
+.pub-card:hover {
+  border-color: var(--bordeaux);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pub-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.pub-card-nom {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.pub-card-prix {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--bordeaux);
+  font-family: 'Inter', sans-serif;
+}
+
+.pub-card-desc {
+  font-size: 12px;
+  color: var(--admin-muted);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.pub-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pub-card-duree {
+  font-size: 12px;
+  color: var(--admin-muted);
+}
+
+/* ===== BADGE CATÉGORIE ===== */
+.pub-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pub-badge-homme { background: #e3eeff; color: #1565c0; }
+.pub-badge-femme { background: var(--warn-dim); color: var(--warn); }
+.pub-badge-mixte { background: var(--ok-dim); color: var(--ok); }
+
+/* ===== FORMULAIRE RÉSERVATION ===== */
+.pub-form-wrap {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.pub-form-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: var(--shadow-lg);
+}
+
+.pub-form-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.pub-form-sub {
+  font-size: 13px;
+  color: var(--admin-muted);
+  margin-bottom: 24px;
+}
+
+/* ===== SUCCESS ===== */
+.pub-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.pub-success-icon { font-size: 3rem; margin-bottom: 16px; }
+.pub-success-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.pub-success-sub { font-size: 13px; color: var(--admin-muted); margin-bottom: 20px; }
+
+/* ===== FOOTER ===== */
+.pub-footer {
+  background: var(--ink);
+  padding: 32px;
+  text-align: center;
+}
+
+.pub-footer-nom {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.pub-footer-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* ===== BTN PUBLIC ===== */
+.btn-pub-primary {
+  background: var(--bordeaux);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pub-primary:hover { background: #4A1C29; transform: translateY(-1px); }
+
+.btn-pub-outline {
+  background: transparent;
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+
+.btn-pub-outline:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.08);
+}
+/* ===== CRÉNEAUX ===== */
+.creneaux-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.creneau-btn {
+  padding: 10px 6px;
+  border-radius: 8px;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.12s;
+}
+
+.creneau-btn:hover {
+  border-color: var(--bordeaux);
+  background: var(--danger-dim);
+  color: var(--bordeaux);
+}
+
+.creneau-btn.creneau-active {
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+  color: var(--white);
+}

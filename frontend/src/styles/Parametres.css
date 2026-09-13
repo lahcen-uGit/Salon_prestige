@@ -1,0 +1,55 @@
+/* ===== MESSAGES ===== */
+.param-error {
+  background: var(--danger-dim);
+  border: 1px solid rgba(168,64,47,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.param-success {
+  background: var(--ok-dim);
+  border: 1px solid rgba(60,122,87,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--ok);
+  font-weight: 600;
+}
+
+/* ===== INPUT SM ===== */
+.param-input-sm {
+  max-width: 150px;
+}
+
+/* ===== APERÇU CALCUL ===== */
+.param-preview {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  max-width: 400px;
+}
+
+.preview-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--admin-muted);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 5px 0;
+}
+
+.preview-divider {
+  border-top: 1px solid var(--line);
+  margin: 8px 0;
+}

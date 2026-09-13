@@ -1,0 +1,76 @@
+/* ===== LAYOUT CAISSE ===== */
+.caisse-center {
+  display: flex;
+  justify-content: center;
+}
+
+.caisse-card {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ===== CALCUL ===== */
+.caisse-calcul {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 4px;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 5px 0;
+  color: var(--admin-text);
+}
+
+.calc-divider {
+  border-top: 1px solid var(--line);
+  margin: 8px 0;
+}
+
+.calc-net   { font-size: 14px; font-weight: 700; }
+.calc-total { font-size: 15px; font-weight: 800; padding-top: 6px; }
+
+/* ===== ERREUR ===== */
+.caisse-error {
+  background: var(--danger-dim);
+  border: 1px solid rgba(168,64,47,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* ===== REÇU ===== */
+.recu-salon {
+  text-align: center;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.recu-salon-nom {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  color: var(--bordeaux);
+  font-weight: 700;
+}
+
+.recu-date { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.recu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--paper);
+}
+
+.recu-divider { border-top: 2px solid var(--line); margin: 10px 0; }
+.recu-net     { font-size: 14px; font-weight: 700; }
+.recu-total   { font-size: 16px; font-weight: 800; }

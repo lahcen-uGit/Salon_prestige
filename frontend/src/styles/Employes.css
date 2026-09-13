@@ -1,0 +1,12 @@
+/* Employes utilise les styles globaux */
+/* On ajoute juste ce qui est spécifique */
+
+.emp-error {
+  background: var(--danger-dim);
+  border: 1px solid rgba(168,64,47,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--danger);
+  font-weight: 600;
+}

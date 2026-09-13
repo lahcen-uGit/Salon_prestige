@@ -1,0 +1,47 @@
+/* ===== SELECT DANS TABLE ===== */
+.resv-select {
+  border: 1px solid var(--admin-line);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  color: var(--admin-text);
+  background: var(--white);
+  cursor: pointer;
+  outline: none;
+}
+
+.resv-select:focus { border-color: var(--bordeaux); }
+
+/* ===== INFO RÉSERVATION ===== */
+.resv-info {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+/* ===== BTN GOLD ===== */
+.btn-gold { background: var(--gold); color: var(--ink); border: none; }
+.btn-gold:hover { background: #A5783A; }
+
+/* ===== TOAST ===== */
+.resv-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: var(--gold);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 999;
+  box-shadow: var(--shadow-lg);
+  animation: toastIn 0.3s ease;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}

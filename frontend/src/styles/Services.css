@@ -1,0 +1,33 @@
+/* ===== BADGES CATEGORIE ===== */
+.badge-homme {
+  background: #e3eeff;
+  color: #1565c0;
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-femme {
+  background: var(--warn-dim);
+  color: var(--warn);
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ===== ERREUR ===== */
+.srv-error {
+  background: var(--danger-dim);
+  border: 1px solid rgba(168,64,47,0.2);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--danger);
+  font-weight: 600;
+}
