@@ -86,7 +86,7 @@ function Paiements() {
       <div className="page-header">
         <div>
           <div className="page-h1">
-            {role === 'admin' ? '💳 Paiements' : '🧾 Mon historique'}
+            {role === 'admin' ? <><span className="material-symbols-outlined">credit_card</span> Paiements</> : <><span className="material-symbols-outlined">receipt</span> Mon historique</>}
           </div>
           <div className="page-desc">
             {role === 'admin'
@@ -138,7 +138,7 @@ function Paiements() {
                   setFiltreService('')
                   setFiltreDate('')
                 }}>
-                ✕ Effacer les filtres
+                <span className="material-symbols-outlined">close</span> Effacer les filtres
               </button>
             )}
           </div>
@@ -196,12 +196,12 @@ function Paiements() {
         <div className="card-body table-pad">
           {loading ? (
             <div className="empty">
-              <div className="empty-icon">⏳</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
               <div className="empty-text">Chargement...</div>
             </div>
           ) : paiementsFiltres.length === 0 ? (
             <div className="empty">
-              <div className="empty-icon">🧾</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">receipt</span></div>
               <div className="empty-text">Aucun paiement enregistré</div>
               <div className="empty-sub">Encaissez depuis la Caisse</div>
             </div>
@@ -255,14 +255,14 @@ function Paiements() {
                         </td>
                       )}
                       <td className="text-sm text-muted">
-                        {p.methode_paiement === 'especes' ? '💵 Espèces' :
-                         p.methode_paiement === 'carte'   ? '💳 Carte'   :
-                         '🏦 Virement'}
+                        {p.methode_paiement === 'especes' ? <><span className="material-symbols-outlined">payments</span> Espèces</> :
+                         p.methode_paiement === 'carte'   ? <><span className="material-symbols-outlined">credit_card</span> Carte</>   :
+                         <><span className="material-symbols-outlined">account_balance</span> Virement</>}
                       </td>
                       {role === 'admin' && (
                         <td>
                           <button className="btn btn-danger btn-xs"
-                            onClick={() => supprimerPaiement(p.id)}>🗑</button>
+                            onClick={() => supprimerPaiement(p.id)}><span className="material-symbols-outlined">delete</span></button>
                         </td>
                       )}
                     </tr>

@@ -151,10 +151,10 @@ function Reservations() {
   }
 
   const badgeStatut = (statut) => {
-    if (statut === 'en_attente') return <span className="badge badge-warn">⏳ En attente</span>
-    if (statut === 'confirmee')  return <span className="badge badge-ok">✓ Confirmée</span>
-    if (statut === 'realisee')   return <span className="badge badge-muted">✅ Réalisée</span>
-    if (statut === 'annulee')    return <span className="badge badge-danger">✕ Annulée</span>
+    if (statut === 'en_attente') return <span className="badge badge-warn"><span className="material-symbols-outlined">hourglass_empty</span> En attente</span>
+    if (statut === 'confirmee')  return <span className="badge badge-ok"><span className="material-symbols-outlined">check</span> Confirmée</span>
+    if (statut === 'realisee')   return <span className="badge badge-muted"> Réalisée</span>
+    if (statut === 'annulee')    return <span className="badge badge-danger"><span className="material-symbols-outlined">close</span> Annulée</span>
     return null
   }
 
@@ -174,7 +174,7 @@ function Reservations() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">📅 Réservations</div>
+          <div className="page-h1"><span className="material-symbols-outlined">calendar_month</span> Réservations</div>
           <div className="page-desc">
             {role === 'admin' ? 'Gérez toutes les réservations du salon' : 'Vos rendez-vous confirmés'}
           </div>
@@ -216,12 +216,12 @@ function Reservations() {
           <div className="card-body table-pad">
             {loading ? (
               <div className="empty">
-                <div className="empty-icon">⏳</div>
+                <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
                 <div className="empty-text">Chargement...</div>
               </div>
             ) : reservations.length === 0 ? (
               <div className="empty">
-                <div className="empty-icon">📅</div>
+                <div className="empty-icon"><span className="material-symbols-outlined">calendar_month</span></div>
                 <div className="empty-text">Aucune réservation</div>
               </div>
             ) : (
@@ -280,7 +280,7 @@ function Reservations() {
                               </select>
                             )}
                             <button className="btn btn-danger btn-xs"
-                              onClick={() => supprimerReservation(r.id)}>🗑</button>
+                              onClick={() => supprimerReservation(r.id)}><span className="material-symbols-outlined">delete</span></button>
                           </div>
                         </td>
                       </tr>
@@ -302,12 +302,12 @@ function Reservations() {
           <div className="card-body table-pad">
             {loading ? (
               <div className="empty">
-                <div className="empty-icon">⏳</div>
+                <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
                 <div className="empty-text">Chargement...</div>
               </div>
             ) : reservations.length === 0 ? (
               <div className="empty">
-                <div className="empty-icon">📅</div>
+                <div className="empty-icon"><span className="material-symbols-outlined">calendar_month</span></div>
                 <div className="empty-text">Aucun rendez-vous assigné</div>
                 <div className="empty-sub">L'admin vous assignera des réservations</div>
               </div>
@@ -338,11 +338,11 @@ function Reservations() {
                           {r.statut === 'confirmee' && (
                             <button className="btn btn-gold btn-sm"
                               onClick={() => ouvrirEncaisser(r)}>
-                              💰 Encaisser
+                              <span className="material-symbols-outlined">payments</span> Encaisser
                             </button>
                           )}
                           {r.statut === 'realisee' && (
-                            <span className="text-muted text-sm">✅ Réalisé</span>
+                            <span className="text-muted text-sm"> Réalisé</span>
                           )}
                         </td>
                       </tr>
@@ -360,8 +360,8 @@ function Reservations() {
         <div className="modal-overlay open">
           <div className="modal" style={{ maxWidth: '440px' }}>
             <div className="modal-header">
-              <div className="modal-title">📱 Confirmer via WhatsApp</div>
-              <button className="modal-close" onClick={() => setModalWaOpen(false)}>✕</button>
+              <div className="modal-title"><span className="material-symbols-outlined">smartphone</span> Confirmer via WhatsApp</div>
+              <button className="modal-close" onClick={() => setModalWaOpen(false)}><span className="material-symbols-outlined">close</span></button>
             </div>
             <div className="modal-body">
               <div style={{ marginBottom: 12, fontSize: 13, color: 'var(--admin-muted)' }}>
@@ -380,7 +380,7 @@ function Reservations() {
                 {waMsg}
               </div>
               <div style={{ marginTop: 12, fontSize: 12, color: 'var(--admin-muted)' }}>
-                ⚠️ WhatsApp s'ouvrira avec ce message pré-rempli — vous devrez cliquer "Envoyer".
+                <span className="material-symbols-outlined">warning</span> WhatsApp s'ouvrira avec ce message pré-rempli — vous devrez cliquer "Envoyer".
               </div>
             </div>
             <div className="modal-footer">
@@ -391,9 +391,9 @@ function Reservations() {
                 <button className="btn btn-primary"
                   onClick={() => {
                     setModalWaOpen(false)
-                    showToast('📱 WhatsApp ouvert — envoyez le message au client')
+                    showToast('WhatsApp ouvert — envoyez le message au client')
                   }}>
-                  📱 Envoyer via WhatsApp
+                  <span className="material-symbols-outlined">smartphone</span> Envoyer via WhatsApp
                 </button>
               </a>
             </div>
@@ -406,8 +406,8 @@ function Reservations() {
         <div className="modal-overlay open">
           <div className="modal" style={{ maxWidth: '420px' }}>
             <div className="modal-header">
-              <div className="modal-title">💰 Encaisser la réservation</div>
-              <button className="modal-close" onClick={() => setModalEncOpen(false)}>✕</button>
+              <div className="modal-title"><span className="material-symbols-outlined">payments</span> Encaisser la réservation</div>
+              <button className="modal-close" onClick={() => setModalEncOpen(false)}><span className="material-symbols-outlined">close</span></button>
             </div>
             <div className="modal-body">
               <div className="resv-info mb-14">
@@ -434,15 +434,15 @@ function Reservations() {
                 <select className="form-select"
                   value={formEnc.methode_paiement}
                   onChange={e => setFormEnc({ ...formEnc, methode_paiement: e.target.value })}>
-                  <option value="especes">💵 Espèces</option>
-                  <option value="carte">💳 Carte bancaire</option>
-                  <option value="virement">🏦 Virement</option>
+                  <option value="especes">Espèces</option>
+                  <option value="carte">Carte bancaire</option>
+                  <option value="virement">Virement</option>
                 </select>
               </div>
             </div>
             <div className="modal-footer">
               <button className="btn btn-outline" onClick={() => setModalEncOpen(false)}>Annuler</button>
-              <button className="btn btn-primary" onClick={encaisser}>✅ Confirmer l'encaissement</button>
+              <button className="btn btn-primary" onClick={encaisser}><span className="material-symbols-outlined">check_circle</span> Confirmer l'encaissement</button>
             </div>
           </div>
         </div>
@@ -453,8 +453,8 @@ function Reservations() {
         <div className="modal-overlay open">
           <div className="modal" style={{ maxWidth: '380px' }}>
             <div className="modal-header">
-              <div className="modal-title">🧾 Reçu</div>
-              <button className="modal-close" onClick={() => setRecuOpen(false)}>✕</button>
+              <div className="modal-title"><span className="material-symbols-outlined">receipt</span> Reçu</div>
+              <button className="modal-close" onClick={() => setRecuOpen(false)}><span className="material-symbols-outlined">close</span></button>
             </div>
             <div className="modal-body">
               <div style={{ textAlign: 'center', paddingBottom: 12, borderBottom: '1px dashed var(--line)', marginBottom: 14 }}>
@@ -489,14 +489,14 @@ function Reservations() {
                 return (
                   <a href={pdfUrl} target="_blank" rel="noreferrer" style={{ width: '100%' }}>
                     <button className="btn btn-gold w-full">
-                      📄 Télécharger le reçu PDF
+                      Télécharger le reçu PDF
                     </button>
                   </a>
                 )
               })()}
               <button className="btn btn-primary w-full"
                 onClick={() => setRecuOpen(false)}>
-                ✓ Fermer
+                <span className="material-symbols-outlined">check</span> Fermer
               </button>
             </div>
 

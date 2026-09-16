@@ -34,7 +34,7 @@ function Clients() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">📇 Clients</div>
+          <div className="page-h1"><span className="material-symbols-outlined">contacts</span> Clients</div>
           <div className="page-desc">Fiches créées automatiquement à chaque paiement</div>
         </div>
       </div>
@@ -69,12 +69,12 @@ function Clients() {
         <div className="card-body table-pad">
           {loading ? (
             <div className="empty">
-              <div className="empty-icon">⏳</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
               <div className="empty-text">Chargement...</div>
             </div>
           ) : clients.length === 0 ? (
             <div className="empty">
-              <div className="empty-icon">📇</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">contacts</span></div>
               <div className="empty-text">Aucun client pour le moment</div>
               <div className="empty-sub">Les clients apparaissent automatiquement après chaque paiement</div>
             </div>

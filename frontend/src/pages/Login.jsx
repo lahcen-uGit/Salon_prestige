@@ -106,11 +106,11 @@ function Login() {
 
           <button className="btn btn-primary w-full mb-12"
             onClick={() => { setVue('employe'); setErrorPin(''); setPin('') }}>
-            ✂️ Employé
+            <span className="material-symbols-outlined">content_cut</span> Employé
           </button>
           <button className="btn btn-outline w-full"
             onClick={() => { setVue('admin'); setErrorAdmin('') }}>
-            👑 Administrateur
+            <span className="material-symbols-outlined">workspace_premium</span> Administrateur
           </button>
 
           {/* Lien retour accueil */}
@@ -118,7 +118,7 @@ function Login() {
             <span
               style={{ fontSize: 12, color: 'var(--admin-muted)', cursor: 'pointer' }}
               onClick={() => navigate('/')}>
-              ← Retour à l'accueil
+              <span className="material-symbols-outlined">arrow_back</span> Retour à l'accueil
             </span>
           </div>
 
@@ -129,7 +129,7 @@ function Login() {
       {vue === 'admin' && (
         <div className="login-box">
           <button className="back-link" onClick={() => setVue('choice')}>
-            ← Retour
+            <span className="material-symbols-outlined">arrow_back</span> Retour
           </button>
 
           <div className="login-title">Espace administrateur</div>
@@ -157,7 +157,7 @@ function Login() {
           <button className="btn btn-primary w-full"
             onClick={handleLoginAdmin}
             disabled={loadingAdmin}>
-            {loadingAdmin ? '⏳ Connexion...' : '🔐 Se connecter'}
+            {loadingAdmin ? <><span className="material-symbols-outlined">hourglass_empty</span> Connexion...</> : <><span className="material-symbols-outlined">lock</span> Se connecter</>}
           </button>
         </div>
       )}
@@ -166,7 +166,7 @@ function Login() {
       {vue === 'employe' && (
         <div className="login-box">
           <button className="back-link" onClick={() => setVue('choice')}>
-            ← Retour
+            <span className="material-symbols-outlined">arrow_back</span> Retour
           </button>
 
           <div className="login-title">Espace employé</div>
@@ -186,10 +186,10 @@ function Login() {
             ))}
             <div></div>
             <button className="pin-key" onClick={() => pinPress('0')}>0</button>
-            <button className="pin-key pin-key-del" onClick={() => pinPress('del')}>⌫</button>
+            <button className="pin-key pin-key-del" onClick={() => pinPress('del')}><span className="material-symbols-outlined">backspace</span></button>
           </div>
 
-          {loadingPin && <div className="pin-loading">⏳ Vérification...</div>}
+          {loadingPin && <div className="pin-loading"><span className="material-symbols-outlined">hourglass_empty</span> Vérification...</div>}
 
         </div>
       )}

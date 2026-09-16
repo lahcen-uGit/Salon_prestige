@@ -21,14 +21,14 @@
 .logo-text {
   font-family: 'Fraunces', serif;
   font-size: 1.3rem;
-  color: var(--gold);
+  color: #ffffff;
   letter-spacing: 0.05em;
   line-height: 1.2;
 }
 
 .logo-sub {
   font-size: 10px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.35);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-top: 3px;
@@ -67,8 +67,8 @@
 }
 
 .nav-link.active {
-  background: rgba(185,138,70,0.18);
-  color: var(--gold);
+  background: rgba(37,99,235,0.15);
+  color: #2563EB;
   font-weight: 700;
 }
 
@@ -80,8 +80,8 @@
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-.user-role { font-size: 11px; color: var(--gold); font-weight: 700; }
-.user-nom  { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 3px; font-weight: 500; }
+.user-role { font-size: 11px; color: #2563EB; font-weight: 700; }
+.user-nom  { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 3px; font-weight: 500; }
 
 .logout-btn {
   margin-top: 12px;
@@ -90,7 +90,7 @@
   cursor: pointer;
   transition: color 0.15s;
 }
-.logout-btn:hover { color: var(--danger-dim); }
+.logout-btn:hover { color: #FF6B6B; }
 
 /* ===== MAIN ===== */
 .main { margin-left: 220px; flex: 1; display: flex; flex-direction: column; }
@@ -112,4 +112,4 @@
 .topbar-right { display: flex; align-items: center; gap: 12px; }
 
 /* Content */
-.content { padding: 24px 28px; flex: 1; background: var(--paper); min-height: calc(100vh - 60px); }
+.content { padding: 24px 28px; flex: 1; background: #F8F9FA; min-height: calc(100vh - 60px); }

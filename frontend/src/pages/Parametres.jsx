@@ -175,7 +175,7 @@ function Parametres() {
 
   if (loading) return (
     <div className="empty" style={{ marginTop: 60 }}>
-      <div className="empty-icon">⏳</div>
+      <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
       <div className="empty-text">Chargement...</div>
     </div>
   )
@@ -186,7 +186,7 @@ function Parametres() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">⚙️ Paramètres</div>
+          <div className="page-h1"><span className="material-symbols-outlined">settings</span> Paramètres</div>
           <div className="page-desc">Réglages globaux du salon et gestion des comptes</div>
         </div>
       </div>
@@ -198,7 +198,7 @@ function Parametres() {
       {/* ===== SECTION SALON ===== */}
       <div className="card mb-14">
         <div className="card-header">
-          <div className="card-title">🏪 Informations du salon</div>
+          <div className="card-title"><span className="material-symbols-outlined">store</span> Informations du salon</div>
         </div>
         <div className="card-body">
 
@@ -225,7 +225,7 @@ function Parametres() {
           </div>
 
           <button className="btn btn-primary" onClick={enregistrerSalon}>
-            💾 Enregistrer les informations
+            <span className="material-symbols-outlined">save</span> Enregistrer les informations
           </button>
 
         </div>
@@ -234,7 +234,7 @@ function Parametres() {
       {/* ===== SECTION COMMISSION ===== */}
       <div className="card mb-14">
         <div className="card-header">
-          <div className="card-title">💰 Commission salon</div>
+          <div className="card-title"><span className="material-symbols-outlined">payments</span> Commission salon</div>
         </div>
         <div className="card-body">
 
@@ -265,7 +265,7 @@ function Parametres() {
           </div>
 
           <button className="btn btn-primary" onClick={enregistrerSalon}>
-            💾 Enregistrer la commission
+            <span className="material-symbols-outlined">save</span> Enregistrer la commission
           </button>
 
         </div>
@@ -274,7 +274,7 @@ function Parametres() {
       {/* ===== SECTION HORAIRES ===== */}
       <div className="card mb-14">
         <div className="card-header">
-          <div className="card-title">🕐 Horaires d'ouverture</div>
+          <div className="card-title"><span className="material-symbols-outlined">schedule</span> Horaires d'ouverture</div>
         </div>
         <div className="card-body">
 
@@ -294,7 +294,7 @@ function Parametres() {
           </div>
 
           <button className="btn btn-primary" onClick={enregistrerSalon}>
-            💾 Enregistrer les horaires
+            <span className="material-symbols-outlined">save</span> Enregistrer les horaires
           </button>
 
         </div>
@@ -303,7 +303,7 @@ function Parametres() {
       {/* ===== SECTION MON COMPTE ===== */}
       <div className="card mb-14">
         <div className="card-header">
-          <div className="card-title">👤 Mon compte admin</div>
+          <div className="card-title"><span className="material-symbols-outlined">person</span> Mon compte admin</div>
         </div>
         <div className="card-body">
 
@@ -338,7 +338,7 @@ function Parametres() {
           </div>
 
           <button className="btn btn-primary" onClick={modifierCompte}>
-            💾 Mettre à jour mon compte
+            <span className="material-symbols-outlined">save</span> Mettre à jour mon compte
           </button>
 
         </div>
@@ -347,7 +347,7 @@ function Parametres() {
       {/* ===== SECTION ADMINS ===== */}
       <div className="card mb-14">
         <div className="card-header">
-          <div className="card-title">👑 Comptes administrateurs</div>
+          <div className="card-title"><span className="material-symbols-outlined">workspace_premium</span> Comptes administrateurs</div>
         </div>
         <div className="card-body">
 
@@ -375,7 +375,7 @@ function Parametres() {
                         {admins.length > 1 && (
                           <button className="btn btn-danger btn-xs"
                             onClick={() => supprimerAdmin(a.id)}>
-                            🗑 Supprimer
+                            <span className="material-symbols-outlined">delete</span> Supprimer
                           </button>
                         )}
                       </td>
@@ -389,7 +389,7 @@ function Parametres() {
           {/* Ajouter nouvel admin */}
           <div style={{ borderTop: '1px solid var(--admin-line)', paddingTop: 16 }}>
             <div className="card-title mb-14" style={{ fontSize: 13 }}>
-              ➕ Ajouter un nouveau compte admin
+              <span className="material-symbols-outlined">add</span> Ajouter un nouveau compte admin
             </div>
             <div className="form-grid form-grid-3 mb-14">
               <div className="form-group">
@@ -412,7 +412,7 @@ function Parametres() {
               </div>
             </div>
             <button className="btn btn-primary" onClick={ajouterAdmin}>
-              👑 Créer le compte admin
+              <span className="material-symbols-outlined">workspace_premium</span> Créer le compte admin
             </button>
           </div>
 

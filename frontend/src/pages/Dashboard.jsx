@@ -24,7 +24,7 @@ function Dashboard() {
 
   if (loading) return (
     <div className="empty" style={{ marginTop: 60 }}>
-      <div className="empty-icon">⏳</div>
+      <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
       <div className="empty-text">Chargement...</div>
     </div>
   )
@@ -48,13 +48,13 @@ function Dashboard() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">📊 Tableau de bord</div>
+          <div className="page-h1"><span className="material-symbols-outlined">bar_chart</span> Tableau de bord</div>
           <div className="page-desc">
             {role === 'admin' ? 'Vue globale du salon' : 'Vos statistiques personnelles'}
           </div>
         </div>
         <button className="btn btn-outline btn-sm" onClick={fetchDashboard}>
-          🔄 Actualiser
+          <span className="material-symbols-outlined">refresh</span> Actualiser
         </button>
       </div>
 
@@ -142,7 +142,7 @@ function Dashboard() {
         <div className="card">
           <div className="card-header">
             <div className="card-title">
-              {role === 'admin' ? '📈 CA — 14 derniers jours' : '📈 Net — 14 derniers jours'}
+              {role === 'admin' ? <><span className="material-symbols-outlined">trending_up</span> CA — 14 derniers jours</> : <><span className="material-symbols-outlined">trending_up</span> Net — 14 derniers jours</>}
             </div>
           </div>
           <div className="card-body">
@@ -172,7 +172,7 @@ function Dashboard() {
         {role === 'admin' && (
           <div className="card">
             <div className="card-header">
-              <div className="card-title">🏆 Top services</div>
+              <div className="card-title"><span className="material-symbols-outlined">emoji_events</span> Top services</div>
             </div>
             <div className="card-body">
               {data.topServices?.length === 0 ? (
@@ -198,7 +198,7 @@ function Dashboard() {
       {role === 'admin' && (
         <div className="card" style={{ marginTop: 20 }}>
           <div className="card-header">
-            <div className="card-title">✂️ Performance des employés</div>
+            <div className="card-title"><span className="material-symbols-outlined">content_cut</span> Performance des employés</div>
           </div>
           <div className="card-body table-pad">
             {data.perfEmployes?.length === 0 ? (

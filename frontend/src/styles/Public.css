@@ -3,9 +3,12 @@
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* fond de page blanc */
+:root { --paper: #ffffff; }
+
 /* ===== NAVBAR ===== */
 .pub-navbar {
-  background: var(--ink);
+  background: #ffffff;
   padding: 0 32px;
   height: 60px;
   display: flex;
@@ -14,19 +17,21 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .pub-brand {
   font-family: 'Fraunces', serif;
   font-size: 1.2rem;
-  color: var(--gold);
+  color: #111111;
   cursor: pointer;
   letter-spacing: 0.05em;
 }
 
 .pub-brand span {
   font-size: 0.7rem;
-  color: rgba(255,255,255,0.4);
+  color: #BBBBBB;
   display: block;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -41,19 +46,23 @@
 
 .pub-nav-link {
   font-size: 13px;
-  color: rgba(255,255,255,0.6);
+  color: #888888;
   cursor: pointer;
   font-weight: 500;
   transition: color 0.15s;
 }
 
-.pub-nav-link:hover { color: var(--white); }
+.pub-nav-link:hover { color: #111111; }
 
-.pub-nav-link.active { color: var(--gold); font-weight: 700; }
+/* lien actif en bleu */
+.pub-nav-link.active {
+  color: #2563EB;
+  font-weight: 700;
+}
 
-/* ===== HERO ===== */
+/* ===== HERO — fond blanc avec teinte bleue très légère ===== */
 .pub-hero {
-  background: var(--ink);
+  background: #F0F7FF;
   padding: 80px 32px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,16 +74,17 @@
 .hero-title {
   font-family: 'Fraunces', serif;
   font-size: 3rem;
-  color: var(--white);
+  color: #111111;
   line-height: 1.1;
   margin-bottom: 16px;
 }
 
-.hero-title span { color: var(--gold); }
+/* mot accentué en bleu */
+.hero-title span { color: #2563EB; }
 
 .hero-lede {
   font-size: 15px;
-  color: rgba(255,255,255,0.6);
+  color: #666666;
   line-height: 1.7;
   max-width: 420px;
   margin-bottom: 28px;
@@ -86,44 +96,50 @@
   flex-wrap: wrap;
 }
 
-/* ===== HERO STATS ===== */
+/* ===== HERO STATS — carte blanche sur fond bleu clair ===== */
 .hero-stats {
-  background: rgba(255,255,255,0.06);
+  background: #ffffff;
+  border: 1px solid #DBEAFE;
   border-radius: 14px;
   padding: 28px;
   display: flex;
   gap: 0;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.12), 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .hero-stat {
   flex: 1;
   text-align: center;
   padding: 16px;
-  border-right: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid #EEF2FF;
 }
 
 .hero-stat:last-child { border-right: none; }
 
+/* chiffres des stats en bleu */
 .hero-stat-num {
   font-family: 'Fraunces', serif;
   font-size: 1.8rem;
-  color: var(--gold);
+  color: #2563EB;
   font-weight: 700;
 }
 
 .hero-stat-lbl {
   font-size: 11px;
-  color: rgba(255,255,255,0.4);
+  color: #AAAAAA;
   margin-top: 4px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTIONS — fond gris très léger sur page blanche ===== */
 .pub-section {
   padding: 60px 32px;
   max-width: 1100px;
   margin: 0 auto;
+  background: #F8F9FA;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.03);
 }
 
 .pub-section-head {
@@ -136,10 +152,10 @@
 .pub-section-title {
   font-family: 'Fraunces', serif;
   font-size: 1.6rem;
-  color: var(--ink);
+  color: #111111;
 }
 
-/* ===== CATALOGUE CARDS ===== */
+/* ===== CATALOGUE CARDS — blanches sur section grise ===== */
 .pub-catalog {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -147,17 +163,18 @@
 }
 
 .pub-card {
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: #ffffff;
+  border: 1px solid #E8E8E8;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: all 0.15s;
 }
 
+/* hover avec bordure bleue */
 .pub-card:hover {
-  border-color: var(--bordeaux);
-  box-shadow: var(--shadow-lg);
+  border-color: #2563EB;
+  box-shadow: 0 8px 28px rgba(37,99,235,0.12), 0 2px 6px rgba(0,0,0,0.05);
   transform: translateY(-2px);
 }
 
@@ -171,20 +188,21 @@
 .pub-card-nom {
   font-family: 'Fraunces', serif;
   font-size: 1rem;
-  color: var(--ink);
+  color: #111111;
   font-weight: 700;
 }
 
+/* prix en bleu */
 .pub-card-prix {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--bordeaux);
+  color: #2563EB;
   font-family: 'Inter', sans-serif;
 }
 
 .pub-card-desc {
   font-size: 12px;
-  color: var(--admin-muted);
+  color: #888888;
   margin-bottom: 12px;
   line-height: 1.5;
 }
@@ -197,7 +215,7 @@
 
 .pub-card-duree {
   font-size: 12px;
-  color: var(--admin-muted);
+  color: #AAAAAA;
 }
 
 /* ===== BADGE CATÉGORIE ===== */
@@ -210,9 +228,9 @@
   font-weight: 600;
 }
 
-.pub-badge-homme { background: #e3eeff; color: #1565c0; }
-.pub-badge-femme { background: var(--warn-dim); color: var(--warn); }
-.pub-badge-mixte { background: var(--ok-dim); color: var(--ok); }
+.pub-badge-homme { background: #DBEAFE; color: #1D4ED8; }
+.pub-badge-femme { background: #FCE7F3; color: #9D174D; }
+.pub-badge-mixte { background: #D1FAE5; color: #065F46; }
 
 /* ===== FORMULAIRE RÉSERVATION ===== */
 .pub-form-wrap {
@@ -220,24 +238,31 @@
   margin: 0 auto;
 }
 
+/* section qui contient uniquement le formulaire : fond blanc, pas de double boîte */
+.pub-section:has(.pub-form-wrap) {
+  background: #ffffff;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 .pub-form-card {
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: #ffffff;
+  border: 1px solid #E8E8E8;
   border-radius: 16px;
   padding: 36px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.09), 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .pub-form-title {
   font-family: 'Fraunces', serif;
   font-size: 1.4rem;
-  color: var(--ink);
+  color: #111111;
   margin-bottom: 6px;
 }
 
 .pub-form-sub {
   font-size: 13px;
-  color: var(--admin-muted);
+  color: #888888;
   margin-bottom: 24px;
 }
 
@@ -248,37 +273,40 @@
 }
 
 .pub-success-icon { font-size: 3rem; margin-bottom: 16px; }
+
 .pub-success-title {
   font-family: 'Fraunces', serif;
   font-size: 1.4rem;
-  color: var(--ink);
+  color: #111111;
   margin-bottom: 8px;
 }
-.pub-success-sub { font-size: 13px; color: var(--admin-muted); margin-bottom: 20px; }
+
+.pub-success-sub { font-size: 13px; color: #888888; margin-bottom: 20px; }
 
 /* ===== FOOTER ===== */
 .pub-footer {
-  background: var(--ink);
+  background: #111111;
   padding: 32px;
   text-align: center;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.10);
 }
 
 .pub-footer-nom {
   font-family: 'Fraunces', serif;
   font-size: 1.1rem;
-  color: var(--gold);
+  color: #ffffff;
   margin-bottom: 6px;
 }
 
 .pub-footer-sub {
   font-size: 12px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.30);
 }
 
 /* ===== BTN PUBLIC ===== */
 .btn-pub-primary {
-  background: var(--bordeaux);
-  color: var(--white);
+  background: #2563EB;
+  color: #ffffff;
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
@@ -292,25 +320,65 @@
   gap: 8px;
 }
 
-.btn-pub-primary:hover { background: #4A1C29; transform: translateY(-1px); }
+.btn-pub-primary:hover {
+  background: #1D4ED8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+}
 
 .btn-pub-outline {
   background: transparent;
-  color: var(--white);
+  color: #2563EB;
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  border: 1.5px solid rgba(255,255,255,0.3);
+  border: 1.5px solid #BFDBFE;
   font-family: 'Inter', sans-serif;
   transition: all 0.15s;
 }
 
 .btn-pub-outline:hover {
-  border-color: var(--white);
-  background: rgba(255,255,255,0.08);
+  border-color: #2563EB;
+  background: #EFF6FF;
 }
+
+/* ===== BOUTON DANS UNE CARD — blanc avec bordure bleue ===== */
+.pub-card .btn-pub-primary {
+  background: #ffffff;
+  color: #2563EB;
+  border: 1.5px solid #BFDBFE;
+  box-shadow: none;
+}
+
+.pub-card .btn-pub-primary:hover {
+  background: #EFF6FF;
+  border-color: #2563EB;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== FORM INPUTS DANS LE FORMULAIRE PUBLIC — focus bleu ===== */
+.pub-form-card .form-input:focus,
+.pub-form-card .form-select:focus,
+.pub-form-card .form-textarea:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+  background: #ffffff;
+}
+
+.pub-form-card .form-input,
+.pub-form-card .form-select,
+.pub-form-card .form-textarea {
+  background: #F8F9FA;
+  border-color: #E8E8E8;
+}
+
+.pub-form-card .form-label {
+  color: #555555;
+}
+
 /* ===== CRÉNEAUX ===== */
 .creneaux-grid {
   display: grid;
@@ -322,9 +390,9 @@
 .creneau-btn {
   padding: 10px 6px;
   border-radius: 8px;
-  border: 1.5px solid var(--line);
-  background: var(--white);
-  color: var(--ink);
+  border: 1.5px solid #E0E0E0;
+  background: #ffffff;
+  color: #444444;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -333,13 +401,15 @@
 }
 
 .creneau-btn:hover {
-  border-color: var(--bordeaux);
-  background: var(--danger-dim);
-  color: var(--bordeaux);
+  border-color: #93C5FD;
+  background: #EFF6FF;
+  color: #2563EB;
 }
 
+/* créneau sélectionné en bleu */
 .creneau-btn.creneau-active {
-  background: var(--bordeaux);
-  border-color: var(--bordeaux);
-  color: var(--white);
+  background: #2563EB;
+  border-color: #2563EB;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(37,99,235,0.30);
 }

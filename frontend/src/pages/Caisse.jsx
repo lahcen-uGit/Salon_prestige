@@ -103,7 +103,7 @@ function Caisse() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">💰 Caisse</div>
+          <div className="page-h1"><span className="material-symbols-outlined">payments</span> Caisse</div>
           <div className="page-desc">Enregistrez une prestation encaissée</div>
         </div>
       </div>
@@ -151,7 +151,7 @@ function Caisse() {
             <div className="form-grid form-grid-2 mb-14">
               <div className="form-group">
                 <label className="form-label">Nom client (optionnel)</label>
-                <input className="form-input" placeholder="Ahmed Benali"
+                <input className="form-input" placeholder="votre nom"
                   value={form.client_nom}
                   onChange={e => setForm({ ...form, client_nom: e.target.value })} />
               </div>
@@ -176,9 +176,9 @@ function Caisse() {
                 <select className="form-select"
                   value={form.methode_paiement}
                   onChange={e => setForm({ ...form, methode_paiement: e.target.value })}>
-                  <option value="especes">💵 Espèces</option>
-                  <option value="carte">💳 Carte bancaire</option>
-                  <option value="virement">🏦 Virement</option>
+                  <option value="especes">Espèces</option>
+                  <option value="carte">Carte bancaire</option>
+                  <option value="virement">Virement</option>
                 </select>
               </div>
             </div>
@@ -216,7 +216,7 @@ function Caisse() {
               style={{ marginTop: 16 }}
               onClick={encaisser}
               disabled={loading2}>
-              {loading2 ? '⏳ Enregistrement...' : '✅ Encaisser et générer le reçu'}
+              {loading2 ? <><span className="material-symbols-outlined">hourglass_empty</span> Enregistrement...</> : <><span className="material-symbols-outlined">check_circle</span> Encaisser et générer le reçu</>}
             </button>
 
           </div>
@@ -228,8 +228,8 @@ function Caisse() {
         <div className="modal-overlay open">
           <div className="modal">
             <div className="modal-header">
-              <div className="modal-title">🧾 Reçu de paiement</div>
-              <button className="modal-close" onClick={() => setRecuOpen(false)}>✕</button>
+              <div className="modal-title"><span className="material-symbols-outlined">receipt</span> Reçu de paiement</div>
+              <button className="modal-close" onClick={() => setRecuOpen(false)}><span className="material-symbols-outlined">close</span></button>
             </div>
             <div className="modal-body">
 
@@ -276,9 +276,9 @@ function Caisse() {
               <div className="recu-row mt-8">
                 <span>Méthode</span>
                 <span>
-                  {recu.methode === 'especes' ? '💵 Espèces' :
-                   recu.methode === 'carte'   ? '💳 Carte'   :
-                   '🏦 Virement'}
+                  {recu.methode === 'especes' ? <><span className="material-symbols-outlined">payments</span> Espèces</> :
+                   recu.methode === 'carte'   ? <><span className="material-symbols-outlined">credit_card</span> Carte</>   :
+                   <><span className="material-symbols-outlined">account_balance</span> Virement</>}
                 </span>
               </div>
 
@@ -291,14 +291,14 @@ function Caisse() {
                 return (
                   <a href={pdfUrl} target="_blank" rel="noreferrer" style={{ width: '100%' }}>
                     <button className="btn btn-gold w-full">
-                      📄 Télécharger le reçu PDF
+                      Télécharger le reçu PDF
                     </button>
                   </a>
                 )
               })()}
               <button className="btn btn-outline w-full"
                 onClick={() => setRecuOpen(false)}>
-                ✓ Fermer
+                <span className="material-symbols-outlined">check</span> Fermer
               </button>
             </div>
 

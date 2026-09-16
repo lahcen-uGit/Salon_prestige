@@ -18,7 +18,7 @@ function Home() {
           <span className="pub-nav-link" onClick={() => navigate('/prestations')}>Prestations</span>
           <span className="pub-nav-link" onClick={() => navigate('/reserver')}>Réserver</span>
           <button className="btn-pub-primary" onClick={() => navigate('/reserver')}>
-            📅 Réserver
+            <span className="material-symbols-outlined">calendar_month</span> Réserver
           </button>
           <button className="btn-pub-outline" onClick={() => navigate('/login')}>
             Connexion
@@ -40,10 +40,10 @@ function Home() {
           </p>
           <div className="hero-cta">
             <button className="btn-pub-primary" onClick={() => navigate('/reserver')}>
-              📅 Réserver un créneau
+              <span className="material-symbols-outlined">calendar_month</span> Réserver un créneau
             </button>
             <button className="btn-pub-outline" onClick={() => navigate('/prestations')}>
-              Découvrir les prestations →
+              Découvrir les prestations <span className="material-symbols-outlined">arrow_forward</span>
             </button>
           </div>
         </div>
@@ -59,7 +59,7 @@ function Home() {
             <div className="hero-stat-lbl">D'expérience</div>
           </div>
           <div className="hero-stat">
-            <div className="hero-stat-num">4.9 ⭐</div>
+            <div className="hero-stat-num">4.9 <span className="material-symbols-outlined">star</span></div>
             <div className="hero-stat-lbl">Note moyenne</div>
           </div>
         </div>
@@ -72,22 +72,22 @@ function Home() {
           <button className="btn-pub-primary"
             style={{ fontSize: 12, padding: '8px 16px' }}
             onClick={() => navigate('/prestations')}>
-            Voir tout le catalogue →
+            Voir tout le catalogue <span className="material-symbols-outlined">arrow_forward</span>
           </button>
         </div>
         <AperçuServices navigate={navigate} />
       </div>
 
       {/* ===== CTA ===== */}
-      <div style={{ background: 'var(--ink)', padding: '60px 32px', textAlign: 'center' }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: '1.8rem', color: 'var(--white)', marginBottom: 12 }}>
+      <div style={{ background: '#ffffff', padding: '60px 32px', textAlign: 'center', boxShadow: '0 4px 32px rgba(0,0,0,0.07)', borderTop: '1px solid #EEEEEE', borderBottom: '1px solid #EEEEEE' }}>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: '1.8rem', color: '#111111', marginBottom: 12 }}>
           Prêt à vous faire chouchouter ?
         </h2>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, marginBottom: 24 }}>
+        <p style={{ color: '#888888', fontSize: 14, marginBottom: 24 }}>
           Réservez votre créneau en ligne en quelques secondes
         </p>
         <button className="btn-pub-primary" onClick={() => navigate('/reserver')}>
-          📅 Réserver maintenant
+          <span className="material-symbols-outlined">calendar_month</span> Réserver maintenant
         </button>
       </div>
 
@@ -131,7 +131,7 @@ function AperçuServices({ navigate }) {
           </div>
           <div className="pub-card-footer">
             {badgeCat(s.categorie)}
-            <span className="pub-card-duree">⏱ {s.duree} min</span>
+            <span className="pub-card-duree"><span className="material-symbols-outlined">timer</span> {s.duree} min</span>
           </div>
         </div>
       ))}

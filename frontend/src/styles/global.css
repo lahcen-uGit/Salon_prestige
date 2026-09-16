@@ -4,24 +4,24 @@
 
 :root {
   /* Couleurs principales */
-  --ink:        #1E1A17;
-  --bordeaux:   #5B2333;
-  --bordeaux-2: #7A3247;
+  --ink:        #111111;
+  --bordeaux:   #2563EB;
+  --bordeaux-2: #1D4ED8;
   --gold:       #B98A46;
   --gold-2:     #D9B888;
-  --paper:      #F6F1E7;
-  --paper-2:    #EFE6D3;
+  --paper:      #F8F9FA;
+  --paper-2:    #F2F2F2;
   --white:      #FFFFFF;
-  --muted:      #8A8177;
-  --line:       #E4D9C4;
+  --muted:      #888888;
+  --line:       #E8E8E8;
 
   /* Couleurs admin */
-  --admin-bg:    #171513;
-  --admin-bg-2:  #232019;
+  --admin-bg:    #1A1A1A;
+  --admin-bg-2:  #242424;
   --admin-panel: #FFFFFF;
-  --admin-line:  #E7E2DA;
-  --admin-text:  #2A2622;
-  --admin-muted: #7A756C;
+  --admin-line:  #E8E8E8;
+  --admin-text:  #111111;
+  --admin-muted: #777777;
 
   /* Statuts */
   --ok:     #3C7A57;
@@ -34,11 +34,27 @@
 
   /* Utilitaires */
   --radius: 10px;
-  --shadow: 0 8px 24px rgba(30,26,23,0.08);
-  --shadow-lg: 0 12px 40px rgba(30,26,23,0.14);
+  --shadow:    0 2px 10px rgba(0,0,0,0.07);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
 }
 
 html { font-size: 14px; scroll-behavior: smooth; }
+
+/* ===== GOOGLE MATERIAL SYMBOLS ===== */
+.material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  user-select: none;
+}
+.icon-sm  { font-size: 15px; }
+.icon-md  { font-size: 18px; }
+.icon-lg  { font-size: 22px; }
+.icon-xl  { font-size: 28px; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -76,9 +92,9 @@ input, select, textarea { font-family: inherit; outline: none; }
 }
 
 .btn-primary   { background: var(--bordeaux); color: var(--white); }
-.btn-primary:hover { background: #4A1C29; }
+.btn-primary:hover { background: var(--bordeaux-2); box-shadow: 0 4px 14px rgba(37,99,235,0.30); }
 
-.btn-gold      { background: var(--gold); color: var(--ink); }
+.btn-gold      { background: var(--gold); color: var(--white); }
 .btn-gold:hover { background: #A5783A; }
 
 .btn-outline   { background: transparent; color: var(--ink); border: 1px solid var(--ink); }

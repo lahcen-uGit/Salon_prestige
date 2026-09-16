@@ -33,7 +33,7 @@
 
 .bar {
   width: 100%;
-  background: linear-gradient(180deg, var(--gold-2, #D9B888), var(--gold, #B98A46));
+  background: linear-gradient(180deg, #60A5FA, #2563EB);
   border-radius: 4px 4px 0 0;
   min-height: 3px;
   transition: height 0.3s ease;

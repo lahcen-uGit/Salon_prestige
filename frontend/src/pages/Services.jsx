@@ -121,11 +121,11 @@ function Services() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">🛎️ Services</div>
+          <div className="page-h1"><span className="material-symbols-outlined">room_service</span> Services</div>
           <div className="page-desc">Catalogue des prestations du salon</div>
         </div>
         <button className="btn btn-primary" onClick={() => ouvrirModal()}>
-          ＋ Nouveau service
+          <span className="material-symbols-outlined">add</span> Nouveau service
         </button>
       </div>
 
@@ -161,12 +161,12 @@ function Services() {
         <div className="card-body table-pad">
           {loading ? (
             <div className="empty">
-              <div className="empty-icon">⏳</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
               <div className="empty-text">Chargement...</div>
             </div>
           ) : services.length === 0 ? (
             <div className="empty">
-              <div className="empty-icon">🛎️</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">room_service</span></div>
               <div className="empty-text">Aucun service pour l'instant</div>
               <div className="empty-sub">Ajoutez votre premier service</div>
             </div>
@@ -201,9 +201,9 @@ function Services() {
                       <td>
                         <div className="flex gap-8">
                           <button className="btn btn-outline btn-xs"
-                            onClick={() => ouvrirModal(s)}>✏️ Modifier</button>
+                            onClick={() => ouvrirModal(s)}><span className="material-symbols-outlined">edit</span> Modifier</button>
                           <button className="btn btn-danger btn-xs"
-                            onClick={() => supprimerService(s.id)}>🗑</button>
+                            onClick={() => supprimerService(s.id)}><span className="material-symbols-outlined">delete</span></button>
                         </div>
                       </td>
                     </tr>
@@ -221,9 +221,9 @@ function Services() {
           <div className="modal">
             <div className="modal-header">
               <div className="modal-title">
-                {editSrv ? '✏️ Modifier service' : '🛎️ Nouveau service'}
+                {editSrv ? <><span className="material-symbols-outlined">edit</span> Modifier service</> : <><span className="material-symbols-outlined">room_service</span> Nouveau service</>}
               </div>
-              <button className="modal-close" onClick={fermerModal}>✕</button>
+              <button className="modal-close" onClick={fermerModal}><span className="material-symbols-outlined">close</span></button>
             </div>
             <div className="modal-body">
 
@@ -282,7 +282,7 @@ function Services() {
             <div className="modal-footer">
               <button className="btn btn-outline" onClick={fermerModal}>Annuler</button>
               <button className="btn btn-primary" onClick={enregistrerService}>
-                ✅ Enregistrer
+                <span className="material-symbols-outlined">check_circle</span> Enregistrer
               </button>
             </div>
           </div>

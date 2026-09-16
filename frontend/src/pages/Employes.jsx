@@ -107,11 +107,11 @@ function Employes() {
       {/* ===== HEADER ===== */}
       <div className="page-header">
         <div>
-          <div className="page-h1">✂️ Employés</div>
+          <div className="page-h1"><span className="material-symbols-outlined">content_cut</span> Employés</div>
           <div className="page-desc">Gérez l'équipe du salon</div>
         </div>
         <button className="btn btn-primary" onClick={() => ouvrirModal()}>
-          ＋ Nouvel employé
+          <span className="material-symbols-outlined">add</span> Nouvel employé
         </button>
       </div>
 
@@ -142,12 +142,12 @@ function Employes() {
         <div className="card-body table-pad">
           {loading ? (
             <div className="empty">
-              <div className="empty-icon">⏳</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">hourglass_empty</span></div>
               <div className="empty-text">Chargement...</div>
             </div>
           ) : employes.length === 0 ? (
             <div className="empty">
-              <div className="empty-icon">✂️</div>
+              <div className="empty-icon"><span className="material-symbols-outlined">content_cut</span></div>
               <div className="empty-text">Aucun employé pour l'instant</div>
               <div className="empty-sub">Ajoutez votre premier employé</div>
             </div>
@@ -170,7 +170,7 @@ function Employes() {
                       </td>
                       <td>
                         {e.actif === 1
-                          ? <span className="badge badge-ok">✓ Actif</span>
+                          ? <span className="badge badge-ok"><span className="material-symbols-outlined">check</span> Actif</span>
                           : <span className="badge badge-muted">Inactif</span>
                         }
                       </td>
@@ -180,9 +180,9 @@ function Employes() {
                       <td>
                         <div className="flex gap-8">
                           <button className="btn btn-outline btn-xs"
-                            onClick={() => ouvrirModal(e)}>✏️ Modifier</button>
+                            onClick={() => ouvrirModal(e)}><span className="material-symbols-outlined">edit</span> Modifier</button>
                           <button className="btn btn-danger btn-xs"
-                            onClick={() => supprimerEmploye(e.id)}>🗑</button>
+                            onClick={() => supprimerEmploye(e.id)}><span className="material-symbols-outlined">delete</span></button>
                         </div>
                       </td>
                     </tr>
@@ -200,9 +200,9 @@ function Employes() {
           <div className="modal">
             <div className="modal-header">
               <div className="modal-title">
-                {editEmp ? '✏️ Modifier employé' : '✂️ Nouvel employé'}
+                {editEmp ? <><span className="material-symbols-outlined">edit</span> Modifier employé</> : <><span className="material-symbols-outlined">content_cut</span> Nouvel employé</>}
               </div>
-              <button className="modal-close" onClick={fermerModal}>✕</button>
+              <button className="modal-close" onClick={fermerModal}><span className="material-symbols-outlined">close</span></button>
             </div>
             <div className="modal-body">
 
@@ -235,7 +235,7 @@ function Employes() {
                   <select className="form-select"
                     value={form.actif}
                     onChange={e => setForm({ ...form, actif: parseInt(e.target.value) })}>
-                    <option value={1}>✓ Actif</option>
+                    <option value={1}>Actif</option>
                     <option value={0}>Inactif</option>
                   </select>
                 </div>
@@ -245,7 +245,7 @@ function Employes() {
             <div className="modal-footer">
               <button className="btn btn-outline" onClick={fermerModal}>Annuler</button>
               <button className="btn btn-primary" onClick={enregistrerEmploye}>
-                ✅ Enregistrer
+                <span className="material-symbols-outlined">check_circle</span> Enregistrer
               </button>
             </div>
           </div>

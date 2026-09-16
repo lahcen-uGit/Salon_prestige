@@ -30,14 +30,14 @@
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: var(--ink);
-  color: var(--gold);
+  background: #111111;
+  color: #ffffff;
   padding: 12px 20px;
   border-radius: 10px;
   font-size: 13px;
   font-weight: 600;
   z-index: 999;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.20);
   animation: toastIn 0.3s ease;
 }
 

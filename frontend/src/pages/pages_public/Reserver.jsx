@@ -148,17 +148,17 @@ function Reserver() {
           <span className="pub-nav-link" onClick={() => navigate('/')}>Accueil</span>
           <span className="pub-nav-link" onClick={() => navigate('/prestations')}>Prestations</span>
           <span className="pub-nav-link active">Réserver</span>
-          <button className="btn-pub-primary" onClick={() => navigate('/reserver')}>📅 Réserver</button>
+          <button className="btn-pub-primary" onClick={() => navigate('/reserver')}><span className="material-symbols-outlined">calendar_month</span> Réserver</button>
           <button className="btn-pub-outline" onClick={() => navigate('/login')}>Connexion</button>
         </div>
       </nav>
 
       {/* ===== HEADER ===== */}
-      <div style={{ background: 'var(--ink)', padding: '40px 32px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: '2rem', color: 'var(--white)', marginBottom: 8 }}>
+      <div style={{ background: '#ffffff', padding: '40px 32px', textAlign: 'center', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderBottom: '1px solid #EEEEEE' }}>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: '2rem', color: '#111111', marginBottom: 8 }}>
           Réserver un créneau
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>
+        <p style={{ color: '#888888', fontSize: 14 }}>
           Remplissez le formulaire et nous vous confirmerons rapidement
         </p>
       </div>
@@ -171,7 +171,7 @@ function Reserver() {
             {/* ===== SUCCÈS ===== */}
             {success ? (
               <div className="pub-success">
-                <div className="pub-success-icon">✅</div>
+                <div className="pub-success-icon"><span className="material-symbols-outlined">check_circle</span></div>
                 <div className="pub-success-title">Demande envoyée !</div>
                 <div className="pub-success-sub">
                   Votre réservation est en attente de confirmation.<br />
@@ -180,7 +180,7 @@ function Reserver() {
                 {whatsappLink && (
                   <a href={whatsappLink} target="_blank" rel="noreferrer">
                     <button className="btn-pub-primary" style={{ marginBottom: 12 }}>
-                      📱 Confirmer via WhatsApp
+                      <span className="material-symbols-outlined">smartphone</span> Confirmer via WhatsApp
                     </button>
                   </a>
                 )}
@@ -217,7 +217,7 @@ function Reserver() {
                 <div className="form-grid form-grid-2 mb-14">
                   <div className="form-group">
                     <label className="form-label">Nom complet *</label>
-                    <input className="form-input" placeholder="Ahmed Benali"
+                    <input className="form-input" placeholder="votre nom"
                       value={form.nom_client}
                       onChange={e => setForm({ ...form, nom_client: e.target.value })} />
                   </div>
@@ -259,19 +259,19 @@ function Reserver() {
 
                   {(!form.service_id || !form.date_souhaitee) && (
                     <div style={{ fontSize: 12, color: 'var(--admin-muted)', padding: '10px 0' }}>
-                      👆 Choisissez d'abord un service et une date
+                      <span className="material-symbols-outlined">touch_app</span> Choisissez d'abord un service et une date
                     </div>
                   )}
 
                   {loadingCren && (
                     <div style={{ fontSize: 12, color: 'var(--admin-muted)', padding: '10px 0' }}>
-                      ⏳ Recherche des créneaux disponibles...
+                      <span className="material-symbols-outlined">hourglass_empty</span> Recherche des créneaux disponibles...
                     </div>
                   )}
 
                   {!loadingCren && msgCreneaux && creneaux.length === 0 && (
                     <div style={{ background: 'var(--danger-dim)', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: 'var(--danger)', fontWeight: 600 }}>
-                      😔 {msgCreneaux}
+                      <span className="material-symbols-outlined">sentiment_dissatisfied</span> {msgCreneaux}
                     </div>
                   )}
 
@@ -301,7 +301,7 @@ function Reserver() {
                   style={{ width: '100%', justifyContent: 'center', padding: 14 }}
                   onClick={envoyer}
                   disabled={loading || !form.heure_souhaitee}>
-                  {loading ? '⏳ Envoi...' : '📅 Envoyer ma demande'}
+                  {loading ? <><span className="material-symbols-outlined">hourglass_empty</span> Envoi...</> : <><span className="material-symbols-outlined">calendar_month</span> Envoyer ma demande</>}
                 </button>
 
               </>

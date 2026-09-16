@@ -44,16 +44,16 @@ function ServicesPublic() {
           <span className="pub-nav-link" onClick={() => navigate('/')}>Accueil</span>
           <span className="pub-nav-link active">Prestations</span>
           <span className="pub-nav-link" onClick={() => navigate('/reserver')}>Réserver</span>
-          <button className="btn-pub-primary" onClick={() => navigate('/reserver')}>📅 Réserver</button>
+          <button className="btn-pub-primary" onClick={() => navigate('/reserver')}><span className="material-symbols-outlined">calendar_month</span> Réserver</button>
           <button className="btn-pub-outline" onClick={() => navigate('/login')}>Connexion</button>
         </div>
       </nav>
 
-      <div style={{ background: 'var(--ink)', padding: '40px 32px', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: '2rem', color: 'var(--white)', marginBottom: 8 }}>
+      <div style={{ background: '#ffffff', padding: '40px 32px', textAlign: 'center', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', borderBottom: '1px solid #EEEEEE' }}>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: '2rem', color: '#111111', marginBottom: 8 }}>
           Nos Prestations
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>
+        <p style={{ color: '#888888', fontSize: 14 }}>
           Découvrez l'ensemble de nos services professionnels
         </p>
       </div>
@@ -71,14 +71,14 @@ function ServicesPublic() {
                 fontSize: 13, fontWeight: 600, cursor: 'pointer',
                 fontFamily: 'Inter, sans-serif',
               }}>
-              {f === 'tous' ? 'Tous' : f === 'homme' ? '♂ Homme' : f === 'femme' ? '♀ Femme' : '⚥ Mixte'}
+              {f === 'tous' ? 'Tous' : f === 'homme' ? 'Homme' : f === 'femme' ? 'Femme' : 'Mixte'}
             </button>
           ))}
         </div>
 
         {loading ? (
           <div style={{ textAlign: 'center', padding: 40, color: 'var(--admin-muted)' }}>
-            ⏳ Chargement...
+            <span className="material-symbols-outlined">hourglass_empty</span> Chargement...
           </div>
         ) : (
           <div className="pub-catalog">
@@ -93,12 +93,12 @@ function ServicesPublic() {
                 </div>
                 <div className="pub-card-footer">
                   {badgeCat(s.categorie)}
-                  <span className="pub-card-duree">⏱ {s.duree} min</span>
+                  <span className="pub-card-duree"><span className="material-symbols-outlined">timer</span> {s.duree} min</span>
                 </div>
                 <button className="btn-pub-primary"
                   style={{ marginTop: 14, width: '100%', justifyContent: 'center' }}
                   onClick={() => reserverService(s.id)}>
-                  📅 Réserver ce service
+                  <span className="material-symbols-outlined">calendar_month</span> Réserver ce service
                 </button>
               </div>
             ))}

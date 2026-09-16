@@ -47,29 +47,29 @@ function Layout({ children }) {
             <div className="nav-label">Principal</div>
 
             <div className={isActive('/caisse')} onClick={() => navigate('/caisse')}>
-              <span className="nav-icon">💰</span> Caisse
+              <span className="nav-icon"><span className="material-symbols-outlined">payments</span></span> Caisse
             </div>
 
             {/* Paiements — admin seulement */}
             {role === 'admin' && (
               <div className={isActive('/paiements')} onClick={() => navigate('/paiements')}>
-                <span className="nav-icon">💳</span> Paiements
+                <span className="nav-icon"><span className="material-symbols-outlined">credit_card</span></span> Paiements
               </div>
             )}
 
             {/* Historique — employé seulement */}
             {role === 'employe' && (
               <div className={isActive('/paiements')} onClick={() => navigate('/paiements')}>
-                <span className="nav-icon">🧾</span> Mon historique
+                <span className="nav-icon"><span className="material-symbols-outlined">receipt</span></span> Mon historique
               </div>
             )}
 
             <div className={isActive('/dashboard')} onClick={() => navigate('/dashboard')}>
-              <span className="nav-icon">📊</span> Dashboard
+              <span className="nav-icon"><span className="material-symbols-outlined">bar_chart</span></span> Dashboard
             </div>
 
             <div className={isActive('/reservations')} onClick={() => navigate('/reservations')}>
-              <span className="nav-icon">📅</span> Réservations
+              <span className="nav-icon"><span className="material-symbols-outlined">calendar_month</span></span> Réservations
             </div>
 
           </div>
@@ -82,16 +82,16 @@ function Layout({ children }) {
             {role === 'admin' && (
               <>
                 <div className={isActive('/clients')} onClick={() => navigate('/clients')}>
-                  <span className="nav-icon">📇</span> Clients
+                  <span className="nav-icon"><span className="material-symbols-outlined">contacts</span></span> Clients
                 </div>
                 <div className={isActive('/employes')} onClick={() => navigate('/employes')}>
-                  <span className="nav-icon">✂️</span> Employés
+                  <span className="nav-icon"><span className="material-symbols-outlined">content_cut</span></span> Employés
                 </div>
                 <div className={isActive('/services')} onClick={() => navigate('/services')}>
-                  <span className="nav-icon">🛎️</span> Services
+                  <span className="nav-icon"><span className="material-symbols-outlined">room_service</span></span> Services
                 </div>
                 <div className={isActive('/parametres')} onClick={() => navigate('/parametres')}>
-                  <span className="nav-icon">⚙️</span> Paramètres
+                  <span className="nav-icon"><span className="material-symbols-outlined">settings</span></span> Paramètres
                 </div>
               </>
             )}
@@ -101,9 +101,9 @@ function Layout({ children }) {
         </nav>
 
         <div className="sidebar-footer">
-          <div className="user-role">{role === 'admin' ? '👑 Admin' : '✂️ Employé'}</div>
+          <div className="user-role">{role === 'admin' ? <><span className="material-symbols-outlined">workspace_premium</span> Admin</> : <><span className="material-symbols-outlined">content_cut</span> Employé</>}</div>
           <div className="user-nom">{nom}</div>
-          <div className="logout-btn" onClick={handleLogout}>🚪 Déconnexion</div>
+          <div className="logout-btn" onClick={handleLogout}><span className="material-symbols-outlined">logout</span> Déconnexion</div>
         </div>
 
       </aside>
@@ -113,9 +113,9 @@ function Layout({ children }) {
         <header className="topbar">
           <div className="topbar-title">{titles[location.pathname] || 'PRESTIGE'}</div>
           <div className="topbar-right">
-            <span className="text-muted text-sm">👋 {nom}</span>
+            <span className="text-muted text-sm"><span className="material-symbols-outlined">waving_hand</span> {nom}</span>
             <button className="btn btn-primary btn-sm" onClick={() => navigate('/caisse')}>
-              💰 Nouvelle vente
+              <span className="material-symbols-outlined">payments</span> Nouveau paiement
             </button>
           </div>
         </header>
